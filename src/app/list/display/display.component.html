@@ -1,0 +1,16 @@
+<div class="layout-row align-items-center justify-content-center mb-50">
+    <app-user-form
+      (onItemAdded)="onItemAdded($event)"
+    >
+    </app-user-form>
+  </div>
+  <div class="layout-row justify-content-center">
+    <div class="layout-column item-list justify-content-center">
+        <h3>Book List</h3>
+        <app-user-list [dataList]="data" [dataType]="Book" (onItemDelete)="onItemDelete($event)"></app-user-list>
+    </div>
+    <div class="layout-column item-list justify-content-center">
+        <h3>Song List</h3>
+        <app-user-list [dataList]="data" [dataType]="Song" (onItemDelete)="onItemDelete($event)"></app-user-list>
+    </div>
+  </div>

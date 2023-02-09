@@ -1,0 +1,10 @@
+
+<div *ngFor="let task of board; let i = index">
+    <span *ngIf="task.type == type">
+        {{task.name}}
+        <button type="button" class="btn btn-outline-success" (click)="back(task)"><</button>
+        <button (click)="next(task)" type="button" class="btn btn-outline-success" >></button>
+        <button (click)="delete(i)" type="button" class="btn btn-outline-danger" >X</button>
+    </span>
+    
+</div>

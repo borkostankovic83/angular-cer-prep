@@ -1,0 +1,75 @@
+<div class="layout-row align-items-center justify-content-center mt-50">
+
+  <section class="layout-column align-items-center justify-content-between">
+    <span class="input layout-row">
+      <input type="number" class="large" data-test-id="app-input1" [(ngModel)]="input1"
+        (ngModelChange)="onInputChange($event, 'input1')" />
+      <label class="suffix" data-test-id="app-label1">{{unit1}}</label>
+    </span>
+    <select data-test-id="app-select1" [(ngModel)]="select1" (ngModelChange)="onOptionChange($event, 'select1')">
+      <option *ngFor="let length of lengthOptions;" [value]="length?.id">{{length.label}}</option>
+    </select>
+  </section>
+
+  <label>⇋</label>
+
+  <section class="layout-column align-items-center justify-content-between">
+    <span class="input layout-row">
+      <input type="number" class="large" data-test-id="app-input2" [(ngModel)]="input2"
+        (ngModelChange)="onInputChange($event, 'input2')" />
+      <label class="suffix" data-test-id="app-label2">{{unit2}}</label>
+    </span>
+    <select data-test-id="app-select2" [(ngModel)]="select2" (ngModelChange)="onOptionChange($event, 'select2')">
+      <option *ngFor="let length of lengthOptions;" [value]="length?.id">{{length.label}}</option>
+    </select>
+  </section>
+</div>
+
+<!-- 
+<div class="layout-row align-items-center justify-content-center mt-50">
+
+  <section class="layout-column align-items-center justify-content-between">
+    <span class="input layout-row">
+        <input type="number" class="large"
+        [(ngModel)]="fromIndex" 
+        data-test-id="app-input1"/>
+        <label class="suffix" data-test-id="app-label1"></label>
+    </span>
+    <select data-test-id="app-select1">
+      <option *ngFor="let lo of lengthOptions;" [value]="lo">{{lo.label}}</option>
+    </select>
+  </section>
+
+  <br>
+
+  <section class="layout-column align-items-center justify-content-between">
+      <span class="input layout-row" >
+          <input type="number" class="large"
+          [(ngModel)]="toIndex"  
+          data-test-id="app-input2"/>
+          <label class="suffix" data-test-id="app-label2"></label>
+      </span>
+      <select data-test-id="app-select2">
+        <option *ngFor="let lo of lengthOptions;" [value]="lo">{{lo.label}}</option>
+      </select>
+    </section>
+</div>
+
+<br><br> -->
+<!-- <form [formGroup]="form">
+  <div>
+    <label for="length">Length:</label>
+    <input type="number" id="length" formControlName="length">
+  </div>
+  <div>
+    <label for="unit">Unit:</label>
+    <select id="unit" formControlName="unit">
+      <option *ngFor="let lo of lengthOptions;" [value]="lo">{{lo.label}}</option>
+    </select>
+  </div>
+  <div *ngIf="form.valid">
+    <p>Meters: {{ lengthInMeters }}</p>
+    <p>Centimeters: {{ lengthInCentimeters }}</p>
+    <p>Kilometers: {{ lengthInKilometers }}</p>
+  </div>
+</form> -->

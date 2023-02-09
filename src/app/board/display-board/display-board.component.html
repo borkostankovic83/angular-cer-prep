@@ -1,0 +1,39 @@
+<app-task-form
+    (task)="addTask($event)"
+></app-task-form>
+
+<div>
+    <div style="display: inline-block; width: 25%;">
+        <div>Backlog</div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <app-board [board]="board" [type]="'Backlog'" (updateTask)="board"></app-board>
+            </div>
+        </div>
+    </div>
+    <div style="display: inline-block; width: 25%; ">
+        <div>To Do</div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <app-board [board]="board" [type]="'ToDo'"></app-board>
+            </div>
+        </div>
+    </div>
+    <div style="display: inline-block; width: 25%;">
+        <div>Ongoing</div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <app-board [board]="board" [type]="'Ongoing'"></app-board>
+            </div>
+        </div>
+    </div>
+    <div style="display: inline-block; width: 25%;">
+        <div>Done</div>
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <app-board [board]="board" [type]="'Done'"></app-board>
+            </div>
+        </div>
+    </div>
+</div>
+
