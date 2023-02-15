@@ -1,9 +1,40 @@
 
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" routerLink="/shedule" routerLinkActive="active">Navbar</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/search" routerLinkActive="active">Booking</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/weather" routerLinkActive="active">Weather</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/shedule" routerLinkActive="active">Shedule</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/lenght" routerLinkActive="active">Lenght</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/lenght2" routerLinkActive="active">Lenght2</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/user-list" routerLinkActive="active">User list</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/form" routerLinkActive="active">Form list</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/board" routerLinkActive="active">Board</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/temperature" routerLinkActive="active">Temprature converter</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
-<div class="container">
+<div class="container-fluid">
   <router-outlet></router-outlet>
 </div>

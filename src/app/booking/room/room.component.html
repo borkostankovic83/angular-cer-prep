@@ -1,0 +1,11 @@
+ <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col pointer" *ngFor="let room of rooms">
+      <div class="card" (click)="navigateToRoomDetails(room.id.toString())">
+        <img src="{{room.pictures[0]}}" class="card-img-top" alt="..." >
+        <div class="card-body">
+          <h5 class="card-title">{{room.name}}</h5>
+          <p class="card-text">{{room.description}}</p>
+        </div>
+      </div>
+    </div>
+</div>

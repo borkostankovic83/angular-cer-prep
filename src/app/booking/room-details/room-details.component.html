@@ -1,0 +1,17 @@
+<div class="container-fluid">
+    <div class="row" style="margin-top: 10px;">
+        <div class="col-6 col-md-3">
+           Room {{roomId}} Details here.
+        </div>
+        <div class="col-12 col-md-9">
+            <div class="row row-cols-1 row-cols-md-5 g-4">
+                <div class="col pointer">
+                  <div class="card" *ngFor="let pic of pictures">
+                    <img [src]="pic" class="card-img-top" alt="..." >
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-success">Book</button>
+</div>

@@ -1,0 +1,50 @@
+<h5 *ngIf="dev?.name">{{dev.name}} aviability.</h5>
+<div class="row">
+    <div class="col-6 col-md-4">
+        <div>Morning</div>
+
+        <div>
+            <button [ngClass]="{ 'selected': selectedHour === 8 }" [disabled]="checkToDisable(8)" (click)="selectedHour = 8">8 AM - 9 AM</button>
+        </div>
+        <div>
+            <button [ngClass]="{ 'selected': selectedHour === 9 }" [disabled]="checkToDisable(9)" (click)="selectedHour = 9">9 AM - 10 AM</button>
+        </div>
+        <div>
+            <button [ngClass]="{ 'selected': selectedHour === 10 }" [disabled]="checkToDisable(10)"(click)="selectedHour = 10">10 AM - 11 AM</button>
+        </div>
+        <div>
+            <button [ngClass]="{ 'selected': selectedHour === 11 }" [disabled]="checkToDisable(11)" (click)="selectedHour = 11">11 AM - 12 PM</button>
+        </div>
+    </div>
+    <div class="col-6 col-md-4">
+        <div>Afternoon</div>
+        <div>
+            <button [ngClass]="{ 'selected': selectedHour === 1 }" [disabled]="checkToDisable(1)" (click)="selectedHour = 1">1 PM - 2 PM</button>
+        </div>
+        <div>
+            <button [ngClass]="{ 'selected': selectedHour === 2 }" [disabled]="checkToDisable(2)" (click)="selectedHour = 2">2 PM - 3 PM</button>
+        </div>
+        <div>
+            <button [ngClass]="{ 'selected': selectedHour === 3 }" [disabled]="checkToDisable(3)" (click)="selectedHour = 3; selectedColor = 'red'">3 PM - 4 PM</button>
+        </div>
+        <div>
+            <button [ngClass]="{ 'selected': selectedHour === 4 }" [disabled]="checkToDisable(4)" (click)="selectedHour = 4">4 PM - 5 PM</button>
+        </div>
+    </div>
+
+    <div class="col-6 col-md-4">
+        <div>Info</div>
+        <div>{{dev.name}}</div>
+           <div>{{dev.title}}</div>
+        <div *ngFor="let s of dev.shedule">
+           
+           <div>Date: {{s.year}}/{{s.month}}/{{s.day}}</div>
+           <div>Hour: {{s.hour}}</div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <button [disabled]="!dev.name || !selectedHour || !schedule.day" class="book" (click)="bookTime()">Book</button>
+</div>
+

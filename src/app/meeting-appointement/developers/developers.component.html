@@ -1,0 +1,12 @@
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <label class="input-group-text" for="inputGroupSelect01">Select</label>
+    </div>
+
+    <select class="form-select form-select mb-3" (change)="selectDeveloper($event)">
+        <option selected>Choose...</option>
+        <option *ngFor="let dev of developers" [value]="dev.id">{{dev.name}}</option>
+      </select>
+  </div>
+
+

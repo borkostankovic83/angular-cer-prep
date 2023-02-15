@@ -7,6 +7,9 @@ import { TemperatureConverterComponent } from './temperature-converter/temperatu
 import { DisplayComponent } from './list/display/display.component';
 import { DisplayWeaterComponent } from './weather/display-weater/display-weater.component';
 import { DisplayBoardComponent } from './board/display-board/display-board.component';
+import { AviabilityScreenComponent } from './meeting-appointement/aviability-screen/aviability-screen.component';
+import { BookingComponent } from './booking/booking/booking.component';
+import { RoomDetailsComponent } from './booking/room-details/room-details.component';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { DisplayBoardComponent } from './board/display-board/display-board.compo
     RouterModule.forRoot([
       { path:'', component: TemperatureConverterComponent },
       { path:'weather', component: DisplayWeaterComponent },
+      { path:'shedule', component: AviabilityScreenComponent },
       { path:'lenght', component: LengthConverter },
+      { path:'search', component: BookingComponent },
+      { path:'room/:id', component: RoomDetailsComponent },
       { path:'user-list', component: DisplayComponent },
       { path:'form', component: ReactiveFormComponent },
       { path:'board', component: DisplayBoardComponent },

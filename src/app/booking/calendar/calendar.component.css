@@ -1,0 +1,16 @@
+.validator {
+    color: red;
+}
+
+.invalid  {
+    border: solid red 2px;
+    color: red;
+}
+
+input {
+    margin: 10px 10px 5px 0;
+}
+
+label {
+    margin-right: 5px;
+}

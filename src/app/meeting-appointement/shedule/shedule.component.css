@@ -1,0 +1,22 @@
+button {
+    margin: 20px;
+    min-width: 150px;
+    background-color: darkseagreen;
+}
+.book {
+    max-width: 80%;
+    margin: 100px;
+    background-color: rgb(102, 0, 255);
+    color: whitesmoke;
+}
+
+button[disabled] {
+    background-color: gainsboro;
+    cursor: not-allowed;
+  }
+
+  .selected {
+    background-color: lightgreen;
+    padding: 5px;
+  }
+  

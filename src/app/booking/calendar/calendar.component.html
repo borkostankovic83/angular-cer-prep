@@ -1,0 +1,18 @@
+<form [formGroup]="bookingForm">
+    <label>From: </label>
+    <input type="date" formControlName="startDate">
+    <label>To: </label>
+    <input [ngClass]="{ 'invalid ': bookingForm.get('startDate')?.value > bookingForm.get('endDate')?.value}" type="date" formControlName="endDate">
+    <label>Adults: </label>
+    <input type="number" formControlName="adults" max="6" min="1">
+    <label>Children: </label>
+    <input type="number" formControlName="children" max="4" min="0">
+    <button [disabled]="bookingForm.invalid" (click)="book()">Search</button>
+
+    <div class="validator" *ngIf="bookingForm.get('endDate')?.hasError('endDateBeforeStartDate')">
+        End date must be after start date!
+    </div>
+
+    
+</form>
+

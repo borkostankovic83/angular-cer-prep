@@ -11,6 +11,9 @@ import { LenghtModule } from './lenght/lenght.module';
 import { UserListModule } from './list/user-list.module';
 import { WeatherModule } from './weather/weather.module';
 import { BoardModule } from './board/board.module';
+import { MeetingAppointementModule } from './meeting-appointement/meeting-appointement.module';
+import { BookingModule } from './booking/booking.module';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { BoardModule } from './board/board.module';
     LenghtModule,
     UserListModule,
     WeatherModule,
-    BoardModule
+    BoardModule,
+    MeetingAppointementModule,
+    BookingModule,
   ],
   exports: [
   ],
