@@ -1,0 +1,12 @@
+img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 10px;
+  }
+
+.form {
+  display: flex;
+  justify-content: center; /* Center the child element horizontally */
+  align-items: center;
+  margin-bottom: 10px;
+}

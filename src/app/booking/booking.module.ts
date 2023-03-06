@@ -9,7 +9,6 @@ import { FiltersComponent } from './filters/filters.component';
 import { RoomDetailsComponent } from './room-details/room-details.component';
 
 
-
 @NgModule({
   declarations: [
     BookingComponent,

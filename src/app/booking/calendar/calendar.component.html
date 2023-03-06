@@ -7,12 +7,10 @@
     <input type="number" formControlName="adults" max="6" min="1">
     <label>Children: </label>
     <input type="number" formControlName="children" max="4" min="0">
-    <button [disabled]="bookingForm.invalid" (click)="book()">Search</button>
+    <button [disabled]="bookingForm.invalid" (click)="getFiltered()">Search</button>
 
     <div class="validator" *ngIf="bookingForm.get('endDate')?.hasError('endDateBeforeStartDate')">
         End date must be after start date!
-    </div>
-
-    
+    </div> 
 </form>
 

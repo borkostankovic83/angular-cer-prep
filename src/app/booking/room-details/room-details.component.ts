@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Room, RoomsMock } from '../models/room';
+import { RoomService } from '../room.service';
 
 @Component({
   selector: 'app-room-details',
@@ -10,16 +12,18 @@ import { Room, RoomsMock } from '../models/room';
 export class RoomDetailsComponent implements OnInit {
 
   rooms: Room[] = RoomsMock;
+  bookingForm!: FormGroup;
 
   roomId: string = '';
   pictures: string[] = [];
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private roomService: RoomService) { }
 
   ngOnInit(): void {
+    this.bookingForm = this.roomService.getBookingProssData();
     this.roomId = this.route.snapshot.params['id'];
-    this.pictures = this.rooms[this.route.snapshot.params['id']].pictures;
-    console.log(this.pictures)
+    this.pictures = this.rooms[this.route.snapshot.params['id']-1].pictures;
+    // console.log(this.pictures);
   }
 
 }

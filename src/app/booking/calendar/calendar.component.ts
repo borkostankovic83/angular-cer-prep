@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { RoomService } from '../room.service';
 
 @Component({
   selector: 'app-calendar',
@@ -11,7 +12,7 @@ export class CalendarComponent implements OnInit {
   bookingForm: FormGroup;
 
 
-  constructor(private fb: FormBuilder) { 
+  constructor(private fb: FormBuilder, private roomService: RoomService) { 
     this.bookingForm = this.fb.group({
       startDate: [null, Validators.required],
       endDate: [null, [Validators.required, this.dateValidator]],
@@ -23,11 +24,18 @@ export class CalendarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
+  getFiltered() {
+    const { startDate, endDate, adults, children } = this.bookingForm.value;
+    this.roomService.getFilteredRooms(this.bookingForm.value);
+    
+  }
 
   book() {
     const { startDate, endDate, adults, children } = this.bookingForm.value;
+    this.roomService.setBookingProssData(this.bookingForm.value);
     console.log(`Booking from ${startDate} to ${endDate} with ${adults} adults and ${children} childrens.`);
+
+    console.log(`Booking from `, this.bookingForm.value);
   }
 
   dateValidator(c: AbstractControl): { [key: string]: boolean } | null {

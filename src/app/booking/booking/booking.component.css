@@ -1,0 +1,6 @@
+.form {
+    display: flex;
+    justify-content: center; /* Center the child element horizontally */
+    align-items: center;
+    margin: 10px;
+  }
